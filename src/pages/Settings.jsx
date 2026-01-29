@@ -1,7 +1,7 @@
 // src/pages/Settings.jsx
 
 import React, { useMemo } from 'react';
-import { Container, Typography, List, ListItem, ListItemText, Box, Divider, Paper } from '@mui/material';
+import { Container, Typography, List, ListItem, ListItemText, ListItemAvatar, Avatar, Box, Divider, Paper } from '@mui/material';
 
 function Settings({ currentTab, allData }) {
 
@@ -47,6 +47,25 @@ function Settings({ currentTab, allData }) {
                 ) : (
                     requiredItems.itemsList.map((item, index) => (
                         <React.Fragment key={index}>
+                            {/* ⭐️ 核心部分：左側圖片 */}
+                            <ListItemAvatar>
+                                <Avatar
+                                    src={item.ItemImage}
+                                    alt={item.ItemName}
+                                    variant="rounded" // 圓角矩形，比圓形更適合看清楚備品
+                                    sx={{
+                                        width: 60,
+                                        height: 60,
+                                        mr: 1,
+                                        border: '1px solid #eee',
+                                        cursor: 'pointer'
+                                    }}
+                                    onClick={() => item.ItemImage && window.open(item.ItemImage, '_blank')}
+                                >
+                                    {/* 如果沒圖片時的佔位符 */}
+                                    {item.ItemName?.charAt(0) || 'B'}
+                                </Avatar>
+                            </ListItemAvatar>
                             <ListItem sx={{ py: 0.5 }}>
                                 <ListItemText
                                     primary={
@@ -59,6 +78,7 @@ function Settings({ currentTab, allData }) {
                                         ${item.Remarks ? ` \r\n 備註：${item.Remarks}` : ''}`}
                                 />
                             </ListItem>
+
                             {index < requiredItems.itemsList.length - 1 && <Divider component="li" />}
                         </React.Fragment>
                     ))
