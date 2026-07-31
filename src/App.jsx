@@ -2,27 +2,13 @@
 
 import { Box } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import { useCallback, useState } from 'react';
 import BottomNav from './components/Layout/BottomNav';
 import Home from './pages/Home';
 import PlantGuide from './pages/PlantGuide';
 import Settings from './pages/Settings';
-
-// 1. 定義主題
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#4caf50', // 綠色系
-    },
-    secondary: {
-      main: '#ff9800', // 橘色系
-    },
-    background: {
-      default: '#f4f6f8', // 輕微的背景色
-    }
-  },
-});
+import theme from './styles/theme';
 
 function App() {
   // 狀態 1: 控制當前選中的分頁

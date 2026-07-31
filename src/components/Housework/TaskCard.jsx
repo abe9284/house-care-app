@@ -2,6 +2,7 @@
 
 import InfoIcon from '@mui/icons-material/Info';
 import { Box, Card, IconButton, Switch, Typography } from '@mui/material';
+import { cardSurfaceSx } from '../../styles/shared';
 
 /**
  * @param {object} task - 單一 HouseWork 任務資料
@@ -16,13 +17,12 @@ function TaskCard({ task, onCardClick, onToggleComplete }) {
     return (
         <Card
             sx={{
+                ...cardSurfaceSx,
                 my: 1.5,
                 opacity: task.RequiredFlag ? 1 : 0.6,
                 elevation: 4,
-                borderRadius: 2,
-                // 根據完成狀態改變樣式
                 backgroundColor: task.isCompleted ? '#e8f5e9' : 'white',
-                borderLeft: `8px solid ${task.isCompleted ? '#4caf50' : '#ff9800'}` // 左側狀態條
+                borderLeft: `8px solid ${task.isCompleted ? '#4caf50' : '#ff9800'}`
             }}
         >
             <Box sx={

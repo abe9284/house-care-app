@@ -56,7 +56,8 @@ function Settings({ currentTab, allData }) {
                                     sx={{
                                         width: 60,
                                         height: 60,
-                                        mr: 1,
+                                        mt: 1,
+                                        ml: 1,
                                         border: '1px solid #eee',
                                         cursor: 'pointer'
                                     }}
