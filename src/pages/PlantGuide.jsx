@@ -98,12 +98,12 @@ function PlantGuide({ currentTab, allData }) {
                                                 <Box sx={{ mt: 0.5, fontSize: '0.875rem' }}>
                                                     <Box sx={{ display: 'flex', alignItems: 'center', color: 'text.secondary' }}>
                                                         <LocationOn sx={{ fontSize: 14, mr: 0.5 }} />
-                                                        位置: {plant.Location} {plant.Remarks ? `(${plant.Remarks})` : ''}
+                                                        位置: {plant.Location} {plant.LocationRemark? `(${plant.LocationRemark})` : ''}
                                                     </Box>
 
                                                     <Box sx={{ display: 'flex', alignItems: 'center', color: 'text.secondary' }}>
                                                         <AccessTime sx={{ fontSize: 14, mr: 0.5 }} />
-                                                        澆水方法: {plant.WaterMethod}
+                                                        澆水方法: {plant.WaterMethod} {plant.WaterRemark? `(${plant.WaterRemark})` : ''}
                                                     </Box>
 
                                                     {plant.WaterFreq1 && (
